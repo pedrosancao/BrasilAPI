@@ -1,8 +1,9 @@
 const axios = require('axios');
+const crypto = require('crypto');
 
 describe('/feriados/v1 (E2E)', () => {
   test('Feriados fixos com ano válido entre 1900 e 2199', async () => {
-    const year = 1900 + Math.round(Math.random() * (2199 - 1900));
+    const year = 1900 + crypto.randomInt(2199 - 1900);
     const requestUrl = `${global.SERVER_URL}/api/feriados/v1/${year}`;
     const { data } = await axios.get(requestUrl);
 
