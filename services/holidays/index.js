@@ -40,9 +40,7 @@ function computus(year) {
     .map(() => []);
   refDate.setDate(refDate.getDate() + 7 - refDate.getDay());
   holidays[refDate.getMonth()][refDate.getDate()] = ['Páscoa'];
-  refDate.setDate(refDate.getDate() - 2);
-  holidays[refDate.getMonth()][refDate.getDate()] = ['Paixão de Cristo'];
-  refDate.setDate(refDate.getDate() - 45);
+  refDate.setDate(refDate.getDate() - 47);
   holidays[refDate.getMonth()][refDate.getDate()] = ['Carnaval'];
   refDate.setDate(refDate.getDate() + 107);
   holidays[refDate.getMonth()][refDate.getDate()] = ['Corpus Christi'];
