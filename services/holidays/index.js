@@ -52,7 +52,7 @@ function computus(year) {
  *
  * Referência de https://github.com/pagarme/business-calendar/tree/master/src/brazil
  */
-function getNacionalHolidaysByMonth(year) {
+function getNacionalHolidaysAsMatrix(year) {
   if (year < 1900 || year > 2199) {
     throw new Error('Cannot calculate holidays.');
   }
@@ -69,22 +69,24 @@ function getNacionalHolidaysByMonth(year) {
 }
 
 export default function getNacionalHolidays(year) {
-  return getNacionalHolidaysByMonth(year).reduce(
-    (holidays, monthData, month) =>
-      holidays.concat(
-        monthData.reduce((monthHolidays, names, day) => {
-          return monthHolidays.concat(
-            names.map((name) => {
-              const formatedDay = `0${day}`.substr(-2);
-              const formatedMonth = `0${month + 1}`.substr(-2);
-              return {
-                date: `${year}-${formatedMonth}-${formatedDay} 00:00:00`,
-                name,
-              };
-            })
-          );
-        }, [])
-      ),
-    []
-  );
+  const holidayMatrix = getNacionalHolidaysAsMatrix(year);
+  const holidays = holidayMatrix.map((monthMatrix, month) => {
+    const monthHolidays = monthMatrix.map((dayMatrix, day) => {
+      const dayHolidays = dayMatrix.map((name) => {
+        const formatedDay = `0${day}`.substr(-2);
+        const formatedMonth = `0${month + 1}`.substr(-2);
+        return {
+          date: `${year}-${formatedMonth}-${formatedDay} 00:00:00`,
+          name,
+        };
+      });
+      return dayHolidays;
+    });
+    return monthHolidays.reduce((accumulator, dayHolidays) => {
+      return accumulator.concat(dayHolidays);
+    }, []);
+  });
+  return holidays.reduce((accumulator, monthHolidays) => {
+    return accumulator.concat(monthHolidays);
+  }, []);
 }
