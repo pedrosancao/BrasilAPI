@@ -58,7 +58,7 @@ function getNacionalHolidaysAsMatrix(year) {
   }
   const holidays = computus(year);
   holidays[0][1] = ['Confraternização mundial'];
-  holidays[3][21] = ['Tiradentes'];
+  holidays[3][21] = [...(holidays[3][21] || []), 'Tiradentes'];
   holidays[4][1] = ['Dia do trabalho'];
   holidays[8][7] = ['Independência do Brasil'];
   holidays[9][12] = ['Nossa Senhora Aparecida'];
