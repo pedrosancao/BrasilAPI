@@ -72,7 +72,7 @@ export default function getNacionalHolidays(year) {
   const holidayMatrix = getNacionalHolidaysAsMatrix(year);
   const holidays = holidayMatrix.map((monthMatrix, month) => {
     const monthHolidays = monthMatrix.map((dayMatrix, day) => {
-      const dayHolidays = dayMatrix.map((name) => {
+      return dayMatrix.map((name) => {
         const formatedDay = `0${day}`.substr(-2);
         const formatedMonth = `0${month + 1}`.substr(-2);
         return {
@@ -80,7 +80,6 @@ export default function getNacionalHolidays(year) {
           name,
         };
       });
-      return dayHolidays;
     });
     return monthHolidays.reduce((accumulator, dayHolidays) => {
       return accumulator.concat(dayHolidays);
