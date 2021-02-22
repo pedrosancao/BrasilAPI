@@ -89,41 +89,22 @@ function computus(year) {
  */
 function getNacionalHolidaysUnordered(year) {
   const holidays = computus(year);
-  holidays.push(
-    {
-      date: `${year}-01-01 00:00:00`,
-      name: 'Confraternização mundial',
-    },
-    {
-      date: `${year}-04-21 00:00:00`,
-      name: 'Tiradentes',
-    },
-    {
-      date: `${year}-05-01 00:00:00`,
-      name: 'Dia do trabalho',
-    },
-    {
-      date: `${year}-09-07 00:00:00`,
-      name: 'Independência do Brasil',
-    },
-    {
-      date: `${year}-10-12 00:00:00`,
-      name: 'Nossa Senhora Aparecida',
-    },
-    {
-      date: `${year}-11-02 00:00:00`,
-      name: 'Finados',
-    },
-    {
-      date: `${year}-11-15 00:00:00`,
-      name: 'Proclamação da República',
-    },
-    {
-      date: `${year}-12-25 00:00:00`,
-      name: 'Natal',
-    }
+  const fixedHolidays = [
+    ['01-01', 'Confraternização mundial'],
+    ['04-21', 'Tiradentes'],
+    ['05-01', 'Dia do trabalho'],
+    ['09-07', 'Independência do Brasil'],
+    ['10-12', 'Nossa Senhora Aparecida'],
+    ['11-02', 'Finados'],
+    ['11-15', 'Proclamação da República'],
+    ['12-25', 'Natal'],
+  ];
+  return holidays.concat(
+    fixedHolidays.map(([date, name]) => ({
+      date: `${year}-${date} 00:00:00`,
+      name,
+    }))
   );
-  return holidays;
 }
 
 function sortByDate(holidays) {
