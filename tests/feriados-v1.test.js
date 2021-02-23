@@ -13,34 +13,42 @@ describe('/feriados/v1 (E2E)', () => {
         {
           date: `${year}-01-01`,
           name: 'Confraternização mundial',
+          type: 'national',
         },
         {
           date: `${year}-04-21`,
           name: 'Tiradentes',
+          type: 'national',
         },
         {
           date: `${year}-05-01`,
           name: 'Dia do trabalho',
+          type: 'national',
         },
         {
           date: `${year}-09-07`,
           name: 'Independência do Brasil',
+          type: 'national',
         },
         {
           date: `${year}-10-12`,
           name: 'Nossa Senhora Aparecida',
+          type: 'national',
         },
         {
           date: `${year}-11-02`,
           name: 'Finados',
+          type: 'national',
         },
         {
           date: `${year}-11-15`,
           name: 'Proclamação da República',
+          type: 'national',
         },
         {
           date: `${year}-12-25`,
           name: 'Natal',
+          type: 'national',
         },
       ])
     );
@@ -56,14 +64,17 @@ describe('/feriados/v1 (E2E)', () => {
         {
           date: `2010-02-16`,
           name: 'Carnaval',
+          type: 'national',
         },
         {
           date: `2010-04-04`,
           name: 'Páscoa',
+          type: 'national',
         },
         {
           date: `2010-06-03`,
           name: 'Corpus Christi',
+          type: 'national',
         },
       ])
     );
@@ -79,14 +90,17 @@ describe('/feriados/v1 (E2E)', () => {
         {
           date: `2020-02-25`,
           name: 'Carnaval',
+          type: 'national',
         },
         {
           date: `2020-04-12`,
           name: 'Páscoa',
+          type: 'national',
         },
         {
           date: `2020-06-11`,
           name: 'Corpus Christi',
+          type: 'national',
         },
       ])
     );
@@ -138,10 +152,12 @@ describe('/feriados/v1 (E2E)', () => {
         {
           date: `2019-04-21`,
           name: 'Páscoa',
+          type: 'national',
         },
         {
           date: `2019-04-21`,
           name: 'Tiradentes',
+          type: 'national',
         },
       ])
     );

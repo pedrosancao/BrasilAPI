@@ -39,7 +39,7 @@ function formatDate(date) {
  *
  * @see https://en.wikipedia.org/wiki/Computus
  */
-function computus(year) {
+export function getEasterHolidays(year) {
   if (year < 1900 || year > 2199) {
     throw new Error('Cannot calculate holidays.');
   }
@@ -51,6 +51,7 @@ function computus(year) {
   holidays.push({
     date: formatDate(movingDate),
     name: 'Páscoa',
+    type: 'national',
   });
   movingDate.setDate(movingDate.getDate() - 2);
   // Sexta feira Santa / Paixão de Cristo não é feriado nacional
@@ -58,11 +59,13 @@ function computus(year) {
   holidays.push({
     date: formatDate(movingDate),
     name: 'Carnaval',
+    type: 'national',
   });
   movingDate.setDate(movingDate.getDate() + 107);
   holidays.push({
     date: formatDate(movingDate),
     name: 'Corpus Christi',
+    type: 'national',
   });
   return holidays;
 }
@@ -83,8 +86,7 @@ function computus(year) {
  *
  * Referência de https://github.com/pagarme/business-calendar/tree/master/src/brazil
  */
-function getNationalHolidaysUnordered(year) {
-  const holidays = computus(year);
+export function getNationalHolidays(year) {
   const fixedHolidays = [
     ['01-01', 'Confraternização mundial'],
     ['04-21', 'Tiradentes'],
@@ -95,12 +97,11 @@ function getNationalHolidaysUnordered(year) {
     ['11-15', 'Proclamação da República'],
     ['12-25', 'Natal'],
   ];
-  return holidays.concat(
-    fixedHolidays.map(([date, name]) => ({
-      date: `${year}-${date}`,
-      name,
-    }))
-  );
+  return fixedHolidays.map(([date, name]) => ({
+    date: `${year}-${date}`,
+    name,
+    type: 'national',
+  }));
 }
 
 function sortByDate(holidays) {
@@ -115,7 +116,8 @@ function sortByDate(holidays) {
   });
 }
 
-export default function getNationalHolidays(year) {
-  const holidays = getNationalHolidaysUnordered(year);
-  return sortByDate(holidays);
+export default function getHolidays(year) {
+  const easterHolidays = getEasterHolidays(year);
+  const nationalHolidays = getNationalHolidays(year);
+  return sortByDate([...easterHolidays, ...nationalHolidays]);
 }
