@@ -186,7 +186,6 @@ Busca as cidades brasileiras referente a um DDD.
 Busca de detalhes de pessoas jurídicas pelo número do CNPJ utilizando a [API Minha Receita](https://github.com/cuducos/minha-receita)..
 
 **GET** `https://brasilapi.com.br/api/cnpj/v1/19131243000197`**[code]**
->>>>>>> base/master
 
 #### Consulta com sucesso
 
@@ -222,7 +221,6 @@ Busca de detalhes de pessoas jurídicas pelo número do CNPJ utilizando a [API M
 // GET https://brasilapi.com.br/api/cnpj/v1/000
 
 {"message": "CNPJ 000 inválido."}
->>>>>>> base/master
 ```
 
 ### Feriados nacionais
