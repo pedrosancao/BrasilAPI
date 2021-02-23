@@ -106,6 +106,70 @@ describe('/feriados/v1 (E2E)', () => {
     );
   });
 
+  test('Feriados em ordem', async () => {
+    const requestUrl = `${global.SERVER_URL}/api/feriados/v1/2020`;
+    const { data } = await axios.get(requestUrl);
+
+    expect.assertions(1);
+    expect(data).toEqual([
+      {
+        date: `2020-01-01`,
+        name: 'Confraternização mundial',
+        type: 'national',
+      },
+      {
+        date: `2020-02-25`,
+        name: 'Carnaval',
+        type: 'national',
+      },
+      {
+        date: `2020-04-12`,
+        name: 'Páscoa',
+        type: 'national',
+      },
+      {
+        date: `2020-04-21`,
+        name: 'Tiradentes',
+        type: 'national',
+      },
+      {
+        date: `2020-05-01`,
+        name: 'Dia do trabalho',
+        type: 'national',
+      },
+      {
+        date: `2020-06-11`,
+        name: 'Corpus Christi',
+        type: 'national',
+      },
+      {
+        date: `2020-09-07`,
+        name: 'Independência do Brasil',
+        type: 'national',
+      },
+      {
+        date: `2020-10-12`,
+        name: 'Nossa Senhora Aparecida',
+        type: 'national',
+      },
+      {
+        date: `2020-11-02`,
+        name: 'Finados',
+        type: 'national',
+      },
+      {
+        date: `2020-11-15`,
+        name: 'Proclamação da República',
+        type: 'national',
+      },
+      {
+        date: `2020-12-25`,
+        name: 'Natal',
+        type: 'national',
+      },
+    ]);
+  });
+
   test('Utilizando um ano fora do intervalo suportado: 3000', async () => {
     expect.assertions(2);
     const requestUrl = `${global.SERVER_URL}/api/feriados/v1/3000`;
