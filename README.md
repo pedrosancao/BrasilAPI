@@ -237,11 +237,13 @@ Lista feriados nacionais de determinado ano.
 [
   {
     "date": "2021-01-01",
-    "name": "Confraternização mundial"
+    "name": "Confraternização mundial",
+    "type": "national"
   },
   {
     "date": "2021-02-16",
-    "name": "Carnaval"
+    "name": "Carnaval",
+    "type": "national"
   },
   // ...
 ]

@@ -425,52 +425,64 @@
               "application/json": {
                 "example": [
                   {
-                    "date": "2021-01-01 00:00:00",
-                    "name": "Confraternização mundial"
+                    "date": "2021-01-01",
+                    "name": "Confraternização mundial",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-02-16 00:00:00",
-                    "name": "Carnaval"
+                    "date": "2021-02-16",
+                    "name": "Carnaval",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-04-02 00:00:00",
-                    "name": "Paixão de Cristo"
+                    "date": "2021-04-02",
+                    "name": "Paixão de Cristo",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-04-04 00:00:00",
-                    "name": "Páscoa"
+                    "date": "2021-04-04",
+                    "name": "Páscoa",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-04-21 00:00:00",
-                    "name": "Tiradentes"
+                    "date": "2021-04-21",
+                    "name": "Tiradentes",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-05-01 00:00:00",
-                    "name": "Dia do trabalho"
+                    "date": "2021-05-01",
+                    "name": "Dia do trabalho",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-06-03 00:00:00",
-                    "name": "Corpus Christi"
+                    "date": "2021-06-03",
+                    "name": "Corpus Christi",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-09-07 00:00:00",
-                    "name": "Independência do Brasil"
+                    "date": "2021-09-07",
+                    "name": "Independência do Brasil",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-10-12 00:00:00",
-                    "name": "Nossa Senhora Aparecida"
+                    "date": "2021-10-12",
+                    "name": "Nossa Senhora Aparecida",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-11-02 00:00:00",
-                    "name": "Finados"
+                    "date": "2021-11-02",
+                    "name": "Finados",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-11-15 00:00:00",
-                    "name": "Proclamação da República"
+                    "date": "2021-11-15",
+                    "name": "Proclamação da República",
+                    "type": "national"
                   },
                   {
-                    "date": "2021-12-25 00:00:00",
-                    "name": "Natal"
+                    "date": "2021-12-25",
+                    "name": "Natal",
+                    "type": "national"
                   }
                 ]
               }
