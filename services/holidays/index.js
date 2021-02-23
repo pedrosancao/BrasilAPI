@@ -27,16 +27,11 @@ function getPascalFullMoonDates() {
 }
 
 /**
- * Formata a data para meia noite, houveram alguns problemas com fuso
- * horário e toLocaleString() causando a exibição da data anterior.
- *
  * @param Date date
  * @return string
  */
-function formatDateToMidnight(date) {
-  const formatedDay = `0${date.getDate()}`.substr(-2);
-  const formatedMonth = `0${date.getMonth() + 1}`.substr(-2);
-  return `${date.getFullYear()}-${formatedMonth}-${formatedDay}`;
+function formatDate(date) {
+  return date.toISOString().substr(0, 10);
 }
 
 /**
@@ -50,23 +45,23 @@ function computus(year) {
   }
   const pascalFullMoonMonthDay = getPascalFullMoonDates();
   const [refMonth, refDay] = pascalFullMoonMonthDay[year % 19];
-  const refDate = new Date(year, refMonth, refDay);
+  const movingDate = new Date(year, refMonth, refDay);
   const holidays = [];
-  refDate.setDate(refDate.getDate() + 7 - refDate.getDay());
+  movingDate.setDate(movingDate.getDate() + 7 - movingDate.getDay());
   holidays.push({
-    date: formatDateToMidnight(refDate),
+    date: formatDate(movingDate),
     name: 'Páscoa',
   });
-  refDate.setDate(refDate.getDate() - 2);
+  movingDate.setDate(movingDate.getDate() - 2);
   // Sexta feira Santa / Paixão de Cristo não é feriado nacional
-  refDate.setDate(refDate.getDate() - 45);
+  movingDate.setDate(movingDate.getDate() - 45);
   holidays.push({
-    date: formatDateToMidnight(refDate),
+    date: formatDate(movingDate),
     name: 'Carnaval',
   });
-  refDate.setDate(refDate.getDate() + 107);
+  movingDate.setDate(movingDate.getDate() + 107);
   holidays.push({
-    date: formatDateToMidnight(refDate),
+    date: formatDate(movingDate),
     name: 'Corpus Christi',
   });
   return holidays;
@@ -88,7 +83,7 @@ function computus(year) {
  *
  * Referência de https://github.com/pagarme/business-calendar/tree/master/src/brazil
  */
-function getNacionalHolidaysUnordered(year) {
+function getNationalHolidaysUnordered(year) {
   const holidays = computus(year);
   const fixedHolidays = [
     ['01-01', 'Confraternização mundial'],
@@ -120,7 +115,7 @@ function sortByDate(holidays) {
   });
 }
 
-export default function getNacionalHolidays(year) {
-  const holidays = getNacionalHolidaysUnordered(year);
+export default function getNationalHolidays(year) {
+  const holidays = getNationalHolidaysUnordered(year);
   return sortByDate(holidays);
 }
