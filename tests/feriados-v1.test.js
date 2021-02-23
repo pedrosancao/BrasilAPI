@@ -11,35 +11,35 @@ describe('/feriados/v1 (E2E)', () => {
     expect(data).toEqual(
       expect.arrayContaining([
         {
-          date: `${year}-01-01 00:00:00`,
+          date: `${year}-01-01`,
           name: 'Confraternização mundial',
         },
         {
-          date: `${year}-04-21 00:00:00`,
+          date: `${year}-04-21`,
           name: 'Tiradentes',
         },
         {
-          date: `${year}-05-01 00:00:00`,
+          date: `${year}-05-01`,
           name: 'Dia do trabalho',
         },
         {
-          date: `${year}-09-07 00:00:00`,
+          date: `${year}-09-07`,
           name: 'Independência do Brasil',
         },
         {
-          date: `${year}-10-12 00:00:00`,
+          date: `${year}-10-12`,
           name: 'Nossa Senhora Aparecida',
         },
         {
-          date: `${year}-11-02 00:00:00`,
+          date: `${year}-11-02`,
           name: 'Finados',
         },
         {
-          date: `${year}-11-15 00:00:00`,
+          date: `${year}-11-15`,
           name: 'Proclamação da República',
         },
         {
-          date: `${year}-12-25 00:00:00`,
+          date: `${year}-12-25`,
           name: 'Natal',
         },
       ])
@@ -54,15 +54,15 @@ describe('/feriados/v1 (E2E)', () => {
     expect(data).toEqual(
       expect.arrayContaining([
         {
-          date: `2010-02-16 00:00:00`,
+          date: `2010-02-16`,
           name: 'Carnaval',
         },
         {
-          date: `2010-04-04 00:00:00`,
+          date: `2010-04-04`,
           name: 'Páscoa',
         },
         {
-          date: `2010-06-03 00:00:00`,
+          date: `2010-06-03`,
           name: 'Corpus Christi',
         },
       ])
@@ -77,15 +77,15 @@ describe('/feriados/v1 (E2E)', () => {
     expect(data).toEqual(
       expect.arrayContaining([
         {
-          date: `2020-02-25 00:00:00`,
+          date: `2020-02-25`,
           name: 'Carnaval',
         },
         {
-          date: `2020-04-12 00:00:00`,
+          date: `2020-04-12`,
           name: 'Páscoa',
         },
         {
-          date: `2020-06-11 00:00:00`,
+          date: `2020-06-11`,
           name: 'Corpus Christi',
         },
       ])
@@ -136,11 +136,11 @@ describe('/feriados/v1 (E2E)', () => {
     expect(data).toEqual(
       expect.arrayContaining([
         {
-          date: `2019-04-21 00:00:00`,
+          date: `2019-04-21`,
           name: 'Páscoa',
         },
         {
-          date: `2019-04-21 00:00:00`,
+          date: `2019-04-21`,
           name: 'Tiradentes',
         },
       ])

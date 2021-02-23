@@ -236,11 +236,11 @@ Lista feriados nacionais de determinado ano.
 // GET https://brasilapi.com.br/api/feriados/v1/2021
 [
   {
-    "date": "2021-01-01 00:00:00",
+    "date": "2021-01-01",
     "name": "Confraternização mundial"
   },
   {
-    "date": "2021-02-16 00:00:00",
+    "date": "2021-02-16",
     "name": "Carnaval"
   },
   // ...

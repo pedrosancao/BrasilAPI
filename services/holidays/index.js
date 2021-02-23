@@ -1,5 +1,6 @@
 /**
- * Tabela da lua cheia de Páscoa, valida entre 1900 e 2199, inclusive
+ * Tabela da lua cheia de Páscoa, valida entre 1900 e 2199, inclusive.
+ * Contendo mês (indexado em 0) e dia.
  */
 function getPascalFullMoonDates() {
   return [
@@ -35,7 +36,7 @@ function getPascalFullMoonDates() {
 function formatDateToMidnight(date) {
   const formatedDay = `0${date.getDate()}`.substr(-2);
   const formatedMonth = `0${date.getMonth() + 1}`.substr(-2);
-  return `${date.getFullYear()}-${formatedMonth}-${formatedDay} 00:00:00`;
+  return `${date.getFullYear()}-${formatedMonth}-${formatedDay}`;
 }
 
 /**
@@ -101,7 +102,7 @@ function getNacionalHolidaysUnordered(year) {
   ];
   return holidays.concat(
     fixedHolidays.map(([date, name]) => ({
-      date: `${year}-${date} 00:00:00`,
+      date: `${year}-${date}`,
       name,
     }))
   );
